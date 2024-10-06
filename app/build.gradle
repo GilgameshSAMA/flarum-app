@@ -5,10 +5,9 @@ android {
     defaultConfig {
         applicationId "com.march7.mm"
         minSdkVersion 15
-        //noinspection ExpiredTargetSdkVersion
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
-        versionName "1.1"
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     //Successtar Edit

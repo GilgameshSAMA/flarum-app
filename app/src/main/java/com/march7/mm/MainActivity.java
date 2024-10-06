@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
 import android.webkit.ValueCallback;
@@ -41,21 +42,29 @@ public class MainActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptEnabled(true);
         spinner = findViewById(R.id.progressBar1);
         webview.setWebViewClient(new CustomWebViewClient());
+        webview.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        webview.getSettings().setLoadWithOverviewMode(true);
+        webview.getSettings().setUseWideViewPort(true);
+        webview.getSettings().setAppCacheEnabled(true);
+        webview.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        webview.getSettings().setAppCachePath(getCacheDir().getAbsolutePath());
+        webview.getSettings().setDomStorageEnabled(true);
+
+
+
+
 
         // 设置通知栏颜色为半透明黑色
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.setStatusBarColor(Color.argb(128, 0, 0, 0)); // 设置为半透明黑色
         }
-
-        webview.getSettings().setDomStorageEnabled(true);
         webview.getSettings().setAllowFileAccess(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             webview.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
         }
         webview.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
         webview.loadUrl(myurl);
-
         // 设置WebChromeClient以支持文件选择器
         webview.setWebChromeClient(new WebChromeClient() {
             @Override
