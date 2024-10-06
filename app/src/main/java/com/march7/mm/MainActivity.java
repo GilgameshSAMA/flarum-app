@@ -26,6 +26,7 @@ import android.widget.ProgressBar;
 public class MainActivity extends AppCompatActivity {
 
     private WebView webview;
+    private WebView webview2;
     private ProgressBar spinner;
     private String myurl = "https://march7.online"; // Change this to your own url !!
     private ValueCallback<Uri[]> filePathCallback;
