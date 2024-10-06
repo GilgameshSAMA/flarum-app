@@ -5,9 +5,9 @@ android {
     defaultConfig {
         applicationId "com.hhilan.openapp"
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     //Successtar Edit
@@ -22,6 +22,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+        applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "神秘集会.apk"
         }
     }
 }
